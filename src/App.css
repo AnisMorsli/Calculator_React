@@ -60,3 +60,13 @@ body {
   font-size: 2.5rem;
   color: white;
 }
+.dev {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.dev h1 {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
