@@ -56,7 +56,7 @@ function reducer(state, { type, payload }) {
           operation: payload.equation,
         };
       }
-      if (state.previosOprand === null && state.currentOprand === null) {
+      if (state.previosOprand === null && state.currentOprand === '0') {
         return state;
       }
       if (state.previosOprand == null) {
@@ -98,15 +98,9 @@ function reducer(state, { type, payload }) {
         reset: true,
       };
     case ACTIONS.DELETE:
-      if (state.currentOprand === null) {
+      if (state.previosOprand === null && state.currentOprand === '0') {
         return state;
       }
-      if (state.currentOprand.length === 0) {
-        return {
-          currentOprand: null,
-        };
-      }
-
       return {
         ...state,
         currentOprand: state.currentOprand.slice(0, -1),
